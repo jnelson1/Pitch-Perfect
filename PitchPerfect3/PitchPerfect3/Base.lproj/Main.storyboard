@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PitchPerfect3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4m-fI-UeI">
+                                <rect key="frame" x="175" y="322" width="25" height="24"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-53" maxY="0.0"/>
+                                <state key="normal" title="Button" image="ic_stop"/>
+                                <connections>
+                                    <action selector="StopRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OmU-Ar-IfR"/>
+                                    <segue destination="F1j-Ay-Ye6" kind="show" identifier="stopRecording" id="Vz3-fz-FQQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="57" placeholderIntrinsicHeight="57" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjt-fb-FBS">
+                                <rect key="frame" x="159" y="224.5" width="57" height="57"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-51" maxY="0.0"/>
+                                <state key="normal" title="Button" image="ic_mic"/>
+                                <connections>
+                                    <action selector="RecordSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mGl-05-jSH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="F4m-fI-UeI" firstAttribute="top" secondItem="gjt-fb-FBS" secondAttribute="bottom" constant="40" id="HhB-Dd-AWI"/>
+                            <constraint firstItem="gjt-fb-FBS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XUW-65-m6D"/>
+                            <constraint firstItem="F4m-fI-UeI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YtN-Rb-fZC"/>
+                            <constraint firstItem="F4m-fI-UeI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oQB-mz-Ihw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="recordButton" destination="gjt-fb-FBS" id="Go6-U8-FGx"/>
+                        <outlet property="stopButton" destination="F4m-fI-UeI" id="UfX-ay-K6f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104.8" y="59.820089955022496"/>
+        </scene>
+        <!--Pitch View Controller-->
+        <scene sceneID="Snl-17-6N4">
+            <objects>
+                <viewController id="F1j-Ay-Ye6" customClass="PitchViewController" customModule="PitchPerfect3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XCS-oj-dTT"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Dx-1r-07w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ESf-W5-lLN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcd-Gh-7pk">
+                                <rect key="frame" x="155" y="70" width="30" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playButton:" destination="F1j-Ay-Ye6" eventType="touchUpInside" id="sd6-tn-sVk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilm-hb-P1M">
+                                <rect key="frame" x="75" y="152" width="77" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="fast" image="easter-bunny"/>
+                                <connections>
+                                    <action selector="fastButton:" destination="F1j-Ay-Ye6" eventType="touchUpInside" id="EIo-nm-C4F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTQ-nc-8by">
+                                <rect key="frame" x="218" y="149" width="69" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="slow" image="turtle"/>
+                                <connections>
+                                    <action selector="slowButton:" destination="F1j-Ay-Ye6" eventType="touchUpInside" id="LL1-fY-Jms"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LK-NK-XJB">
+                                <rect key="frame" x="75" y="250" width="77" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="high pitch" image="squirrel"/>
+                                <connections>
+                                    <action selector="highPitchButton:" destination="F1j-Ay-Ye6" eventType="touchUpInside" id="zEP-77-nCb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xer-Q6-EfJ">
+                                <rect key="frame" x="215" y="250" width="74" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="low pitch" image="darth-vader"/>
+                                <connections>
+                                    <action selector="lowPitchButton:" destination="F1j-Ay-Ye6" eventType="touchUpInside" id="BI6-0V-Tzu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hW-oe-rDB">
+                                <rect key="frame" x="160.5" y="446" width="54" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="DFE-GS-7dH"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="ic_keyboard_backspace"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="RwJ-e4-eYM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vcd-Gh-7pk" firstAttribute="centerX" secondItem="ESf-W5-lLN" secondAttribute="centerX" id="1Tv-yL-Zxq"/>
+                            <constraint firstItem="9hW-oe-rDB" firstAttribute="centerX" secondItem="ESf-W5-lLN" secondAttribute="centerX" id="KgG-vf-Xmr"/>
+                            <constraint firstItem="2Dx-1r-07w" firstAttribute="top" secondItem="9hW-oe-rDB" secondAttribute="bottom" constant="197" id="Ou6-cR-vfm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VXf-Me-ndh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="864.79999999999995" y="44.527736131934034"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="darth-vader" width="256" height="256"/>
+        <image name="easter-bunny" width="256" height="256"/>
+        <image name="ic_keyboard_backspace" width="24" height="24"/>
+        <image name="ic_mic" width="24" height="24"/>
+        <image name="ic_stop" width="24" height="24"/>
+        <image name="squirrel" width="256" height="256"/>
+        <image name="turtle" width="256" height="256"/>
+    </resources>
+</document>
