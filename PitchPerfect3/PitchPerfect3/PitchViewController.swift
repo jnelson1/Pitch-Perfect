@@ -14,6 +14,8 @@ class PitchViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
     var audioPlayer : AVAudioPlayer?
     var audioEngine: AVAudioEngine!
     var audioFile: AVAudioFile!
+    var audioPlayerNode=AVAudioPlayerNode()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +44,7 @@ class PitchViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
 
     }
     func commonAudioFunction(audioChangeNumber: Float, typeOfChange: String){
-        let audioPlayerNode = AVAudioPlayerNode()
-        
+        var audioPlayerNode=AVAudioPlayerNode()
         audioPlayerNode.stop()
         audioEngine.stop()
         audioEngine.reset()
@@ -97,6 +98,10 @@ class PitchViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
     }
     @IBAction func lowPitchButton(_ sender: Any) {
         commonAudioFunction(audioChangeNumber: -1000, typeOfChange: "pitch")
+    }
+    @IBAction func stop(_ sender: Any) {
+        audioPlayer?.stop()
+        audioPlayerNode.stop()
     }
     /*
     // MARK: - Navigation
